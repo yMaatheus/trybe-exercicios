@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <title>Portifólio Matheus Henrique</title>
+  <style>
+    body {
+      background: linear-gradient(180deg, rgb(0, 255, 204), rgb(4, 78, 63));
+      font-family: sans-serif;
+      margin: 0px;
+      text-align: center;
+    }
+
+    ul {
+      list-style: none;
+    }
+
+    a {
+      /*Retira a sublinhagem da frase*/
+      color: black;
+      text-decoration: none;
+    }
+
+    a:visited {
+      /* Retira cor roxa ao acessar o link*/
+      color: black;
+    }
+
+    .nav-bar {
+      font-size: 24px;
+      background-color: rgb(4, 78, 63);
+      padding: 20px;
+    }
+
+    .nav-bar ol {
+      /* Retira números da frente da lista(ex: 1., 2., 3.) */
+      list-style: none;
+      padding-inline-start: 0;
+      margin: 0;
+    }
+
+    .nav-bar ol li {
+      display: inline-block;
+      padding-inline-end: 10px;
+    }
+
+    #foto {
+      width: 300px;
+      border-radius: 100%;
+    }
+
+    .redes-sociais img {
+      width: 20px;
+    }
+
+    .skills ul {
+      padding: 0;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="nav-bar">
+    <ol>
+      <li><a href="#Foto"> Sobre Mim </a></li>
+      <li><a href="#Principais Habilidades"> Principais Habilidades </a></li>
+      <li><a href="#Outras Habilidades"> Outras Habilidades </a></li>
+    </ol>
+  </div>
+
+  <div class="sobre">
+    <h1>Matheus Henrique</h1>
+    <img id="foto" src="/images/Eu_menor.jpg" alt="Matheus Henrique" />
+    <p>
+      Olá me chamo Matheus, sou Brasileiro nascido em João Pessoa, Paraíba.
+      <br />
+      Sou <strong> apaixonado por tecnologia </strong> desde meus nove anos, com apenas treze anos comecei a me
+      aventurar com
+      <strong> Java e MySQL </strong>, acabei me distanciando da área por um tempo mas percebi que está é minha paixão.
+      <br />
+      Resolvi sair um pouco da minha zona de conforto na área e estudar um segmento novo:
+      <strong> Desenvolvimento Web Full Stack na Trybe. </strong> <br />
+      <em>Vejo a tecnologia como uma importante ferramenta para mudarmos o mundo e quero contribuir para isso.</em>
+    </p>
+  </div>
+
+  <div class="redes-sociais">
+    <a href="https://www.linkedin.com/in/ymaatheus/" target="_blank"><img src="./images/linkedin-brands.svg"
+        alt="Icone Linkedin"> Linkedin</a>
+    <br />
+    <a href="https://github.com/yMaatheus" target="_blank"><img src="./images/github-brands.svg" alt="Icone GitHub">
+      GitHub</a>
+  </div>
+
+  <div class="skills">
+    <h2>Habilidades:</h2>
+    <h3 id="Principais Habilidades">Habilidades que me orgulho:</h3>
+    <ul>
+      <li>Dedicação</li>
+      <li>Empatia</li>
+      <li><em> Programar em Java </em></li>
+      <li>Um ótimo jogador de Valorant</li>
+      <li>Prodígio em quedas de skate</li>
+    </ul>
+    <h3 id="Outras Habilidades">Outras habilidades:</h3>
+    <ul>
+      <li>Unix e Bash</li>
+      <li>Git</li>
+      <li>Programação Orientada a Objetos</li>
+      <li>Arquitetura MVC</li>
+      <li>Projeto Orientado por Domínio</li>
+    </ul>
+  </div>
+</body>
+
+</html>
