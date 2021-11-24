@@ -1,0 +1,99 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  background-color: beige;
+  /* background: linear-gradient(180deg, rgb(0, 255, 204), rgb(4, 78, 63)); */
+  font-family: "Segoe UI", sans-serif;
+  text-align: center;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  /*Retira a sublinhagem da frase*/
+  color: black;
+  text-decoration: none;
+}
+
+a:visited {
+  /* Retira cor roxa ao acessar o link*/
+  color: black;
+}
+
+.nav-bar {
+  font-size: 24px;
+  background-color: rgb(4, 78, 63);
+  padding: 20px;
+}
+
+.nav-bar ol {
+  /* Retira números da frente da lista(ex: 1., 2., 3.) */
+  list-style: none;
+  padding-inline-start: 0;
+  margin: 0;
+}
+
+.nav-bar ol li {
+  display: inline-block;
+  padding-inline-end: 10px;
+}
+
+#foto {
+  width: 20%;
+  border-radius: 100%;
+  float: left;
+  padding: 0.3%;
+  background-color: darkseagreen;
+}
+
+.image-container {
+  height: 420px;
+  position: relative;
+  padding-top: 0.5%;
+  padding-left: 5%;
+}
+
+.description {
+  position: absolute;
+  top: 20%;
+  left: 26%;
+  width: 50%;
+  padding-top: 3%;
+}
+
+p.description em {
+  display: block;
+  padding: 5%;
+}
+
+.redes-sociais {
+  position: absolute;
+  top: 47%;
+  left: 40%;
+}
+
+.redes-sociais img {
+  width: 5%;
+}
+
+ul li:nth-child(2n+1) {
+  background-color: aliceblue;
+}
+
+.skills {
+  height: 260px;
+}
+
+.skills h2 {
+  padding-top: 1%;
+  padding-bottom: 1%;
+}
+
+/* div {
+  border: 2px solid red;
+} */

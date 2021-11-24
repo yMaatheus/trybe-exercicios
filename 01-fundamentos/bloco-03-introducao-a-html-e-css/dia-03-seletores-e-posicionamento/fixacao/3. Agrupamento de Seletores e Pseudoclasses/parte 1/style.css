@@ -1,0 +1,16 @@
+h1, p {
+    text-align: center;
+}
+ol:hover {
+    background-color: blue;
+}
+ol li:active {
+    color: white;
+    font: 30px 'Estonia', cursive;
+    /* font-family: 'Estonia', cursive; */
+    /* font-size: 200px; */
+}
+
+ol, ul {
+    list-style: none;
+}
