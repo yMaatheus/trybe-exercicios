@@ -1,0 +1,52 @@
+body {
+    background: linear-gradient(180deg, rgb(0, 255, 204), rgb(4, 78, 63));
+    font-family: sans-serif;
+    margin: 0px;
+    text-align: center;
+  }
+  
+  ul {
+    list-style: none;
+  }
+
+  a {
+    /*Retira a sublinhagem da frase*/
+    color: black;
+    text-decoration: none;
+  }
+
+  a:visited {
+    /* Retira cor roxa ao acessar o link*/
+    color: black;
+  }
+
+  .nav-bar {
+    font-size: 24px;
+    background-color: rgb(4, 78, 63);
+    padding: 20px;
+  }
+
+  .nav-bar ol {
+    /* Retira números da frente da lista(ex: 1., 2., 3.) */
+    list-style: none;
+    padding-inline-start: 0;
+    margin: 0;
+  }
+
+  .nav-bar ol li {
+    display: inline-block;
+    padding-inline-end: 10px;
+  }
+
+  #foto {
+    width: 300px;
+    border-radius: 100%;
+  }
+
+  .redes-sociais img {
+    width: 20px;
+  }
+
+  .skills ul {
+    padding: 0;
+  }
