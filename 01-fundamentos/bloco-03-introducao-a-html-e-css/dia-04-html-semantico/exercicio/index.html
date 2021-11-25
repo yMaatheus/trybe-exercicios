@@ -1,32 +1,34 @@
 <!DOCTYPE html>
-<html>
+<html lang="pt-br">
 
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
     <link rel="stylesheet" href="style.css">
+    <title>Soco a 80km/h: Conheça o Stomatopoda</title>
 </head>
 
 <body>
     <!--insira os elementos aqui-->
     <header class="header">
-        <section class="titulo">
+        <section>
             <h1>Soco a 80km/h: Conheça o Stomatopoda</h1>
         </section>
         <nav class="nav-bar">
             <ul>
-                <li><a href="">Pagina Inicial</a></li>
-                <li><a href="">Sobre</a></li>
-                <li><a href="">Contato</a></li>
+                <li><a href="#main">Pagina Inicial</a></li>
+                <li><a href="#sobre">Sobre</a></li>
+                <li><a href="#footer">Contato</a></li>
             </ul>
         </nav>
     </header>
 
-    <main class="main">
+    <main class="main" id="main">
         <article class="article">
             <h2>Fatos sobre o Stomatopoda</h2>
             <section class="resumo">
                 <table>
+                    <caption>Classificação Científica</caption>
                     <img src="images/stomatopoda.jpg" alt="Stomatopoda">
                     <tr>
                         <th>Classificação Científica</th>
@@ -56,7 +58,7 @@
                         <td>Stomatopoda</td>
                     </tr>
                 </table>
-                <h3>Resumo</h3>
+                <h3 id="sobre">Resumo</h3>
                 <p>Stomatopoda, chamados popularmente de tamarutacas ou de lacraias-do-mar no
                     Brasil, é uma ordem de
                     crustáceos marinhos da subclasse Hoplocarida, que agrupa cerca de 400 espécies, caracterizadas
@@ -146,7 +148,7 @@
         </article>
     </main>
 
-    <footer class="footer">
+    <footer class="footer" id="footer">
         <h4>"Conteúdo compilado por Matheus Henrique, 2021"</h4>
     </footer>
 </body>
