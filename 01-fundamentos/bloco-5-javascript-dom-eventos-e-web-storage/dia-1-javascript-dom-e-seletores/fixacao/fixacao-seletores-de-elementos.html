@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <header>
+      <h2 id="page-title">Título</h2>
+      <p class="paragrafos" id="paragraph">Dê uma cor para este parágrafo!</p>
+      <h4 id="subtitle">Subtítulo</h4>
+      <p class="paragrafos" id="second-paragraph">Segundo parágrafo!</p>
+    </header>
+    <script>
+      const paragraph = document.getElementById("paragraph");
+      paragraph.style.color = "red";
+      document.getElementById("page-title").innerText = "Interstellar";
+      document.getElementById("second-paragraph").innerText = "Parágrafo 2!";
+      document.getElementById("subtitle").innerText = "Novo Subtitulo";
+
+      const paragrafos = document.getElementsByClassName("paragrafos");
+      paragrafos[0].style.color = "blue";
+      const subTitulo = document.getElementsByTagName("h4");
+      subTitulo[0].style.color = "yellow";
+    </script>
+  </body>
+</html>
