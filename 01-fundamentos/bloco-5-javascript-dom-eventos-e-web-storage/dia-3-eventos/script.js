@@ -81,17 +81,69 @@ function changeColorFridays(event) {
 
 const days = document.querySelectorAll(".day");
 
-for (let day of days) {
-    day.addEventListener("mouseenter", zoom);
-    day.addEventListener("mouseleave", unZoom);
-}
-
 function zoom(event) {
-    event.target.style.fontSize = "40px";
-    event.target.style.fontWeight = "400px";
+    event.target.style.fontSize = "30px";
+    event.target.style.fontWeight = "300px";
 }
 
 function unZoom(event) {
     event.target.style.fontSize = '20px';
     event.target.style.fontWeight = '200';
+}
+
+for (let day of days) {
+    day.addEventListener("mouseenter", zoom);
+    day.addEventListener("mouseleave", unZoom);
+    day.addEventListener("click", changeColorDayFOrTaskSelect);
+}
+
+const myTasks = document.querySelector(".my-tasks");
+
+function addTask(taskName) {
+    const span = document.createElement("span");
+    span.innerText = taskName;
+    myTasks.appendChild(span);
+}
+
+addTask("cozinhar");
+
+function createDivTask(cor) {
+    const div = document.createElement("div");
+    div.classList.add("task");
+    div.style.backgroundColor = cor;
+    return div;
+}
+
+const divTask = createDivTask("green");
+divTask.addEventListener("click", function(event) {
+    if (event.target.className === "task") {
+        event.target.className = "task selected";
+    } else {
+        event.target.className = "task";
+    }
+});
+myTasks.appendChild(divTask);
+
+function changeColorDayFOrTaskSelect(event) {
+    const selectedTask = document.getElementsByClassName("task selected")[0];
+    
+    if (selectedTask === undefined || selectedTask === null) {
+        return;
+    }
+
+    const taskColor = selectedTask.style.backgroundColor;
+    const eventTargetColor = event.target.style.color;
+
+    if (eventTargetColor !== taskColor) {
+        event.target.style.color = "green";
+    } else {
+        event.target.style.color = 'rgb(119,119,119)';
+    }
+}
+
+const compromissosAddButton = document.querySelector("#btn-add");
+compromissosAddButton.addEventListener("click", addCompromisso);
+
+function addCompromisso() {
+    const input = document.querySelector("#task-input");
 }
