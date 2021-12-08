@@ -42,16 +42,7 @@ buttonHolidays.addEventListener("click", changeBackgroundColorHolidays);
 buttonsContainer.appendChild(buttonHolidays);
 
 const buttonFridays = createButton("Sexta-feira", "btn-friday"); 
-// buttonFridays.addEventListener("click", "");
 buttonsContainer.appendChild(buttonFridays);
-
-// function createFeriados(string) {
-//     const button = document.createElement("button");
-//     button.innerText = string;
-//     button.id = "btn-holiday";
-//     button.addEventListener("click", changeBackgroundColorHolidays);
-//     buttonsContainer.appendChild(button);
-// }
 
 function changeBackgroundColorHolidays(event) {
     const holidays = document.querySelectorAll(".holiday");
@@ -65,15 +56,6 @@ function changeBackgroundColorHolidays(event) {
         holiday.style.color = "white";
     }
 }
-
-// createFridayButton("Sexta-feira");
-
-// function createFridayButton(string) {
-//     const button = document.createElement("button");
-//     button.innerText = string;
-//     button.id = "btn-friday";
-//     buttonsContainer.appendChild(button);
-// }
 
 function createButton(buttonName, buttonId) {
     const button = document.createElement("button");
