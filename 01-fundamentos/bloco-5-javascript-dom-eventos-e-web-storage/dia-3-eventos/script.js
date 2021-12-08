@@ -16,7 +16,6 @@ createDaysOfTheWeek();
 // Escreva seu código abaixo.
 
 const dezDaysList = [29, 30, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31];
-
 for (let day of dezDaysList) {
     createDay(day);
 }
@@ -37,11 +36,21 @@ function createDay(day) {
 
 const buttonsContainer = document.querySelector(".buttons-container");
 
+function createButton(buttonName, buttonId) {
+    const button = document.createElement("button");
+    button.innerText = buttonName;
+    if (buttonId != null) {
+        button.id = buttonId;
+    }
+    return button;
+}
+
 const buttonHolidays = createButton("Feriados", "btn-holiday");
 buttonHolidays.addEventListener("click", changeBackgroundColorHolidays);
 buttonsContainer.appendChild(buttonHolidays);
 
 const buttonFridays = createButton("Sexta-feira", "btn-friday"); 
+buttonFridays.addEventListener("click", changeColorFridays);
 buttonsContainer.appendChild(buttonFridays);
 
 function changeBackgroundColorHolidays(event) {
@@ -57,11 +66,32 @@ function changeBackgroundColorHolidays(event) {
     }
 }
 
-function createButton(buttonName, buttonId) {
-    const button = document.createElement("button");
-    button.innerText = buttonName;
-    if (buttonId != null) {
-        button.id = buttonId;
+function changeColorFridays(event) {
+    const fridays = document.querySelectorAll(".friday");
+    for (let friday of fridays) {
+        if (friday.style.backgroundColor === "yellow") {
+            friday.style.backgroundColor = "rgb(238,238,238)";
+            friday.style.color = "#777";
+            continue;
+        }
+        friday.style.backgroundColor = "yellow";
+        friday.style.color = "red";
     }
-    return button;
+}
+
+const days = document.querySelectorAll(".day");
+
+for (let day of days) {
+    day.addEventListener("mouseenter", zoom);
+    day.addEventListener("mouseleave", unZoom);
+}
+
+function zoom(event) {
+    event.target.style.fontSize = "40px";
+    event.target.style.fontWeight = "400px";
+}
+
+function unZoom(event) {
+    event.target.style.fontSize = '20px';
+    event.target.style.fontWeight = '200';
 }
