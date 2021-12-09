@@ -141,9 +141,31 @@ function changeColorDayFOrTaskSelect(event) {
     }
 }
 
-const compromissosAddButton = document.querySelector("#btn-add");
-compromissosAddButton.addEventListener("click", addCompromisso);
+const input = document.querySelector("#task-input");
 
-function addCompromisso() {
-    const input = document.querySelector("#task-input");
+const addButton = document.querySelector("#btn-add");
+addButton.addEventListener("click", addClickTask);
+
+input.addEventListener("keydown", pressEnterAddTask);
+
+function addClickTask() {
+    const taskList = document.querySelector(".task-list");
+    
+    if (input.value === "") {
+        alert("Escreva um texto primeiro para adicionar a lista!");
+        return;
+    }
+
+    const li = document.createElement("li");
+
+    li.innerText = input.value;
+    input.value = "";
+
+    taskList.appendChild(li);
+}
+
+function pressEnterAddTask(event) {
+    if (event.key === "Enter") {
+        addButton.click();
+    }
 }
