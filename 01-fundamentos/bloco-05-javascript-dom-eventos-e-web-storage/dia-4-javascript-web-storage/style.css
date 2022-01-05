@@ -1,0 +1,49 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+a {
+    /*Retira a sublinhagem da frase*/
+    color: black;
+}
+
+a:visited {
+    /* Retira cor roxa ao acessar o link*/
+    color: black;
+}
+
+header {
+    text-align: center;
+    padding-top: 1%;
+}
+
+body {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 960px;
+    margin: 0 auto;
+    justify-content: center;
+}
+
+section {
+    flex: 1 1 300px;
+    margin: 10px;
+}
+
+.blocks {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.blocks section {
+    flex: 1 1 300px;
+    margin: 10px;
+}
+
+footer {
+    text-align: center;
+}
