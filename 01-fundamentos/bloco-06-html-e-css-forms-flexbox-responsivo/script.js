@@ -1,17 +1,17 @@
 const submitButton = document.querySelector(".button-submit");
 const clearButton = document.querySelector(".button-clear");
-const estados = ["AC - Acre", "AL - Alagoas", "AP - Amapá", "AM - Amazonas", "BA - Bahia", "CE - Ceará", "DF - Distrito Federal",
+const states = ["AC - Acre", "AL - Alagoas", "AP - Amapá", "AM - Amazonas", "BA - Bahia", "CE - Ceará", "DF - Distrito Federal",
     "ES - Espírito Santo", "GO - Goías", "MA - Maranhão", "MT - Mato Grosso", "MS - Mato Grosso do Sul", "MG - Minas Gerais", "PA - Pará",
     "PB - Paraíba", "PR - Paraná", "PE - Pernambuco", "PI - Piauí", "RJ - Rio de Janeiro", "RN - Rio Grande do Norte", "RS - Rio Grande do Sul",
     "RO - Rondônia", "RR - Roraíma", "SC - Santa Catarina", "SP - São Paulo", "SE - Sergipe", "TO - Tocantins"];
 
 function loadStates() {
-    const select = document.querySelector("#input-state");
-    for (let estado of estados) {
+    const stateInput = document.querySelector("#input-state");
+    for (let state of states) {
         const option = document.createElement("option");
-        option.value = estado;
-        option.text = estado;
-        select.appendChild(option);
+        option.value = state;
+        option.text = state;
+        stateInput.appendChild(option);
     }
 }
 
