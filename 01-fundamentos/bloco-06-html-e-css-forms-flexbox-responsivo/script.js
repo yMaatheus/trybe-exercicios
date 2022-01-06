@@ -13,7 +13,6 @@ function loadStates() {
         option.text = estado;
         select.appendChild(option);
     }
-    select.required = true;
 }
 
 function submit(event) {
