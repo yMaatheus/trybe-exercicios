@@ -35,6 +35,16 @@ function submit(event) {
     if (!validateHouse()) {
         alert("Tipo de imóvel inválido.")
     }
+    if (!validateCurriculum()) {
+        alert("Curriculo inválido.");
+    }
+    if (!validateRole()) {
+        alert("Cargo inválido.");
+    }
+    if (!validateDescription()) {
+        alert("Descrição inválida.");
+    }
+    validateStartDate();
 }
 
 function validateName() {
@@ -48,8 +58,8 @@ function validateName() {
 
 function validateEmail() {
     const email = document.querySelector("[name=email]");
-    const length = email.value.length;
     const value = email.value;
+    const length = value.length;
     if (isNull(email) || validateLength(length, 0, 50) || !value.includes("@")) {
         return false;
     }
@@ -77,7 +87,7 @@ function validateAddress() {
 function validateCity() {
     const city = document.querySelector("[name=city]");
     const length = city.value.length;
-    if (isNull(address) || validateLength(length, 0, 28)) {
+    if (isNull(city) || validateLength(length, 0, 28)) {
         return false;
     }
     return true;
@@ -89,6 +99,67 @@ function validateHouse() {
         return false;
     }
     return true;
+}
+
+function validateCurriculum() {
+    const curriculum = document.querySelector("[name=curriculum]");
+    const length = curriculum.value.length;
+    if (isNull(curriculum) || validateLength(length, 0, 1000)) {
+        return false;
+    }
+    return true;
+}
+
+function validateRole() {
+    const role = document.querySelector("[name=role]");
+    const length = role.value.length;
+    if (isNull(role) || validateLength(length, 0, 40)) {
+        return false;
+    }
+    return true;
+}
+
+function validateDescription() {
+    const desc = document.querySelector("[name=desc]");
+    const length = desc.value.length;
+    if (isNull(desc) || validateLength(length, 0, 40)) {
+        return false;
+    }
+    return true;
+}
+
+function validateStartDate() {
+    const date = document.querySelector("[name=date]");
+    const value = date.value;
+    const length = value.length;
+    if (isNull(date) || validateLength(length, 0)) {
+        alert("Data de início inválida");
+        return;
+    }
+    const df = value.split("/");
+    const day = df[0];
+    const month = df[1];
+    const year = df[2];
+
+    if (!(df.length === 3 && day.length == 2 && month.length === 2 && year.length === 4)) {
+        alert("Formato da data de início é inválida.");
+        return;
+    }
+
+    if (!(day > 0 && day <= 31)) {
+        alert("O dia da data de inicio é inválido.")
+        return;
+    }
+
+    if (!(month > 0 && month <= 12)) {
+        alert("O mês da data de inicio é inválido.");
+        return;
+    }
+
+    if (year < 0) {
+        alert("O ano da data de inicio é inválido.")
+        return;
+    }
 }
 
 function isNull(arg) {
