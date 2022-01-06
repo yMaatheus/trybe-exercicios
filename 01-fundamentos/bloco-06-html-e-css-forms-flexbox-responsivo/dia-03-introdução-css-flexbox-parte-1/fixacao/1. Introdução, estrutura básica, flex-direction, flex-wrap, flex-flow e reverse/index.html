@@ -15,12 +15,17 @@
             margin: 10px 5px;
             text-align: center;
             width: 30%;
+            display: flex;
+            flex-flow: row-reverse wrap;
         }
 
         .box-container {
             background-color: #0fa36b;
             display: flex;
             /* ADICIONE AQUI SEUS TESTES */
+            flex-direction: row;
+            flex-wrap: wrap-reverse;
+            /* flex-flow: column wrap-reverse; */
         }
     </style>
 
@@ -33,6 +38,7 @@
         <div class="box">3</div>
         <div class="box">4</div>
         <div class="box">5</div>
+        <div class="box">6</div>
     </div>
 </body>
 
