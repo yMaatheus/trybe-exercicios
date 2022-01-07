@@ -1,13 +1,3 @@
-/*
-To be done:
-
-- Caso todos os dados sejam válidos, monte uma <div> com o consolidado dos dados que foram inseridos no formulário.
-- Caso haja algum dado inválido, mostre em uma <div> uma mensagem de erro. Se o erro for na Data de Início , a mensagem deve ser contextualizada.
-- Crie um botão Limpar que limpa todos os campos do formulário e a <div> com seu currículo também.
-
-*/
-const submitButton = document.querySelector(".button-submit");
-const clearButton = document.querySelector(".button-clear");
 const states = ["AC - Acre", "AL - Alagoas", "AP - Amapá", "AM - Amazonas", "BA - Bahia", "CE - Ceará", "DF - Distrito Federal",
     "ES - Espírito Santo", "GO - Goías", "MA - Maranhão", "MT - Mato Grosso", "MS - Mato Grosso do Sul", "MG - Minas Gerais", "PA - Pará",
     "PB - Paraíba", "PR - Paraná", "PE - Pernambuco", "PI - Piauí", "RJ - Rio de Janeiro", "RN - Rio Grande do Norte", "RS - Rio Grande do Sul",
@@ -15,51 +5,42 @@ const states = ["AC - Acre", "AL - Alagoas", "AP - Amapá", "AM - Amazonas", "BA
 const inputs = {
     name: {
         input: document.querySelector("[name=name]"),
-        isValid: false,
         max: 40,
     },
     email: {
         input: document.querySelector("[name=email]"),
-        isValid: false,
         max: 50,
     },
     cpf: {
         input: document.querySelector("[name=cpf]"),
-        isValid: false,
         max: 11,
     },
     address: {
         input: document.querySelector("[name=address]"),
-        isValid: false,
         max: 200,
     },
     city: {
         input: document.querySelector("[name=city]"),
-        isValid: false,
         max: 28,
     },
     house: {
         input: document.querySelector("[name=house]"),
-        isValid: false,
     },
     curriculum: {
         input: document.querySelector("[name=curriculum]"),
-        isValid: false,
         max: 1000,
     },
     role: {
         input: document.querySelector("[name=role]"),
-        isValid: false,
         max: 40,
     },
     description: {
-        input: document.querySelector("[name=description]"),
-        isValid: false,
+        input: document.querySelector("[name=desc]"),
         max: 500,
     },
     startDate: {
-        input: document.querySelector("[name=startDate]"),
-        isValid: false,
+        input: document.querySelector("[name=date]"),
+        errorMessage: "",
     },
 }
 
@@ -76,29 +57,35 @@ function loadStates() {
 function submit(event) {
     event.preventDefault();
 
-    // const name = validate("name", 0, 40);
-    // const email = validateEmail();
-    // const cpf = validate("cpf", 0, 11);
-    // const address = validate("address", 0, 200);
-    // const city = validate("city", 0, 28);
-    // const house = validateHouse();
-    // const curriculum = validate("curriculum", 0, 1000);
-    // const role = validate("role", 0, 40);
-    // const description = validate("desc", 0, 500);
-    // const startDate = validateStartDate();
-
     const div = document.querySelector("#exit-form");
     let valid = true;
+
+    clearChilds(div);
 
     for (const key in inputs) {
         const obj = inputs[key];
         if (key == "email") {
+            if (!validateEmail()) {
+                appendLine(div, key + " inválido.");
+                valid = false;
+                break;
+            }
             continue;
         }
         if (key == "house") {
+            if (!validateHouse()) {
+                appendLine(div, key + " inválido.");
+                valid = false;
+                break;
+            }
             continue;
         }
         if (key == "startDate") {
+            if (!validateStartDate()) {
+                appendLine(div, obj.errorMessage);
+                valid = false;
+                break;
+            }
             continue;
         }
         if (!isValid(obj)) {
@@ -111,45 +98,50 @@ function submit(event) {
     if (valid) {
         for (const key in inputs) {
             const obj = inputs[key];
-            appendLine(div, obj.value);
+            appendLine(div, key + ": " + obj.input.value);
         }
     }
 }
 
 function isValid(obj) {
     const input = obj.input;
+    const max = obj.max;
     const value = input.value;
     const length = value.length;
-    if (isNull(input) || !isValidLength(length, input.max)) {
+    if (isNull(input) || !isValidLength(length, max)) {
         return false;
     }
     return true;
 }
 
 function validateEmail() {
-    const email = document.querySelector("[name=email]");
-    const value = email.value;
-    const length = value.length;
-    if (isNull(email) || validateLength(length, 50) || !value.includes("@")) {
+    const obj = inputs.email;
+    const max = obj.max;
+    const input = obj.input;
+    const value = input.value;
+    const length = input.length;
+    if (isNull(input) || !isValidLength(length, max) || !value.includes("@")) {
         return false;
     }
     return true;
 }
 
 function validateHouse() {
-    const house = document.querySelector("[name=house]");
-    if (isNull(house) || house.value === "") {
+    const input = inputs.house.input;
+    if (isNull(input) || input.value === "") {
         return false;
     }
     return true;
 }
 
 function validateStartDate() {
-    const date = document.querySelector("[name=date]");
-    const value = date.value;
+    const date = inputs.startDate;
+    const input = date.input;
+    const value = input.value;
     const length = value.length;
-    if (isNull(date) || validateLength(length)) {
-        return "Data de início não foi preenchida.";
+    if (isNull(input) || !isValidLength(length)) {
+        date.errorMessage = "Data de início não foi preenchida.";
+        return false;
     }
     const df = value.split("/");
     const day = df[0];
@@ -157,21 +149,25 @@ function validateStartDate() {
     const year = df[2];
 
     if (!(df.length === 3 && day.length == 2 && month.length === 2 && year.length === 4)) {
-        return "Formato da data de início é inválida.";
+        date.errorMessage = "Formato da data de início é inválida.";
+        return false;
     }
 
     if (!(day > 0 && day <= 31)) {
-        return "O dia da data de inicio é inválido.";
+        date.errorMessage = "O dia da data de inicio é inválido.";
+        return false;
     }
 
     if (!(month > 0 && month <= 12)) {
-        return "O mês da data de inicio é inválido.";
+        date.errorMessage = "O mês da data de inicio é inválido.";
+        return false;
     }
 
     if (year < 0) {
-        return "O ano da data de inicio é inválido.";
+        date.errorMessage = "O ano da data de inicio é inválido.";
+        return false;
     }
-    return date.value;
+    return true;
 }
 
 function appendLine(father, str) {
@@ -194,13 +190,42 @@ function isValidLength(length, max) {
     return true;
 }
 
-function clear() {
+function clearChilds(arg) {
+    for (let i = arg.childNodes.length -1; i >= 0; i--) {
+        const child = arg.childNodes[i];
+        child.remove();
+    }
+}
 
+function clear() {
+    const div = document.querySelector("#exit-form");
+    clearChilds(div);
+    const form = document.querySelector("#form");
+    form.reset();
+}
+
+function formatDate(event) {
+    const target = event.target;
+    const key = event.key;
+    const value = target.value;
+    const length = value.length;
+    if (isNaN(key) || event.key === " ") {
+        event.preventDefault();
+    }
+    if (length === 2 || length === 5) {
+        target.value = value.concat("/");
+    }
 }
 
 window.onload = function () {
     loadStates();
 
+    const submitButton = document.querySelector(".button-submit");
     submitButton.addEventListener('click', submit);
+
+    const clearButton = document.querySelector(".button-clear");
     clearButton.addEventListener('click', clear)
+
+    const inputDate = document.querySelector("#input-date");
+    inputDate.addEventListener("keypress", formatDate);
 }
