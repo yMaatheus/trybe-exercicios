@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="dist/css/DatePickerX.min.css">
+    <script src="dist/js/DatePickerX.min.js"></script>
+    <script src="https://unpkg.com/just-validate@latest/dist/just-validate.production.min.js"></script>
+    <title>Exercicio 6.1</title>
+</head>
+
+<body>
+    <header>
+        <h1>Formulário para cadastro de currículo</h1>
+    </header>
+    <main>
+        <form action="" method="get" id="form">
+            <fieldset>
+                <div class="mb-3">
+                    <label class="form-label" for="input-name">Nome</label>
+                    <input type="text" maxlength="40" name="name" id="input-name" required>
+                </div>
+
+                <div class="mb-3">
+                    <label for="input-email">Email</label>
+                    <input type="text" maxlength="50" name="email" id="input-email" required>
+                </div>
+
+                <div class="mb-3">
+                    <label for="input-cpf">CPF</label>
+                    <input type="text" maxlength="11" name="cpf" id="input-cpf" required>
+                </div>
+
+                <div class="mb-3">
+                    <label for="input-address">Endereço</label>
+                    <input type="text" maxlength="200" name="address" id="input-address" required>
+                </div>
+
+                <div class="mb-3">
+                    <label for="input-city">Cidade</label>
+                    <input type="text" maxlength="28" name="city" id="input-city" required>
+                </div>
+
+                <div class="mb-3">
+                    <label for="input-state">Estado</label>
+                    <select name="state" id="input-state" required></select>
+                </div>
+
+                <div class="mb-3">
+                    <label for="house">Tipo de imóvel: </label>
+                    <input type="radio" name="house" id="input-home" value="home" required>
+                    <label for="input-home">Casa</label>
+                    <input type="radio" name="house" id="input-apartament" value="apartament" required>
+                    <label for="input-apartament">Apartamento</label>
+                </div>
+            </fieldset>
+            <fieldset>
+                <div class="mb-3 form-group">
+                    <label class="form-label" for="input-curriculum">Resumo Currículo</label>
+                    <textarea class="form-control rounded-0" maxlength="1000" cols="50" rows="10" name="curriculum" id="textarea-curriculum" required></textarea>
+                </div>
+
+                <div class="mb-3">
+                    <label for="input-role">Cargo</label>
+                    <input type="text" maxlength="40" name="role" id="input-role" required>
+                </div>
+
+                <div class="mb-3">
+                    <label for="input-desc">Descrição do Cargo</label>
+                    <input type="text" maxlength="500" name="desc" id="input-desc" required>
+                </div>
+
+                <div class="mb-3">
+                    <label for="input-date">Data de Início</label>
+                    <input type="text" size="11" name="date" id="input-date" required>
+                </div>
+            </fieldset>
+            <button class="button-submit btn btn-success" type="submit">Enviar</button>
+            <button class="button-clear btn btn-secondary" type="button">Limpar</button>
+        </form>
+        <div id="exit-form"></div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
