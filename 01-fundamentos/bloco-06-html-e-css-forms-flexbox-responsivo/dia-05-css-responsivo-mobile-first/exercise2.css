@@ -1,0 +1,58 @@
+html {
+    box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
+body {
+    background-color: bisque;
+    font-family: sans-serif;
+    font-size: 16px;
+    margin: 0px 12px;
+}
+
+header nav ul {
+    display: flex;
+    justify-content: space-around;
+}
+
+ul {
+    padding-left: 0px;
+}
+
+h1 {
+    font-size: 24px;
+}
+
+.container {
+    flex-direction: column;
+}
+
+p {
+    padding: 0 5px;
+    line-height: 16px;
+}
+
+@media screen and (min-width: 700px) {
+    body {
+        background-color: lightblue;
+    }
+
+    .container {
+        flex-wrap: wrap;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    body {
+        background-color: lightgreen;
+    }
+
+    .container {
+        flex-wrap: nowrap;
+    }
+}
