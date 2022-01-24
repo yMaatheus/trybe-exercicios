@@ -1,4 +1,4 @@
-const sum = require('./sum.js');
+const sum = require('./sum');
 
 describe('Exercicio 1', () => {
   it('O retorno de sum(4, 5) é 9', () => {
