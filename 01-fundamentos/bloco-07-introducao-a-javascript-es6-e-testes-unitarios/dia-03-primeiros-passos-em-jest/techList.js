@@ -6,5 +6,4 @@ function techList(array, name) {
     return array.map((tech) => ({ tech, name }));
 }
 
-console.log(techList(["React", "Jest", "HTML", "CSS", "JavaScript"], 'Lucas'));
 module.exports = techList;
