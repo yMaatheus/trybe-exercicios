@@ -1,4 +1,4 @@
-const myRemove = require('./myRemove');
+const myRemove = require('../myRemove');
 
 describe('Exercicio 2', () => {
     it('A chamada myRemove([1, 2, 3, 4], 3) retorna [1, 2, 4]', () => {
