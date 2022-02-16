@@ -1,6 +1,6 @@
 import './App.css';
 
-const array = ['Pão', 'Açúcar', 'Nutella'];
+const array = ['Fazer Projeto', 'Lavar louça', 'Estudar Jest'];
 
 const Task = (value) => {
   return (
