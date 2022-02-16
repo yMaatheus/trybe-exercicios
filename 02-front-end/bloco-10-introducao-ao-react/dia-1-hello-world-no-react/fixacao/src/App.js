@@ -1,9 +1,9 @@
 import './App.css';
-import AboutMe from './Component';
+import Component from './Component';
 
 function App() {
   return (
-    <AboutMe/>
+    <Component/>
   );
 }
 
