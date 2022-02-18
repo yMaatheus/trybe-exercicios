@@ -1,0 +1,18 @@
+.title {
+    display: flex;
+    justify-content: center;
+    font-size: 42px;
+}
+
+.content-pokemons {
+    margin: 0 auto;
+    width: 600px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+@media screen and (max-width: 700px) {
+    .content-pokemons {
+        width: 300px;
+    }
+}

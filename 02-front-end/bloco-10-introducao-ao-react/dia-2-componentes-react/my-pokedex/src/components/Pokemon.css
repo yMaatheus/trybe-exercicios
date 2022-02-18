@@ -1,0 +1,18 @@
+.content {
+    border: 1px solid gray;
+    border-radius: 1rem;
+    margin: 8px;
+    flex: 1;
+}
+
+.content-pokemon {
+    padding: 0.8rem 1rem;
+    display: flex;
+    justify-content: space-around;
+}
+
+.content-pokemon-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
