@@ -4,38 +4,37 @@ class Form extends React.Component {
     constructor() {
         super();
 
-        this.handleChangeText = this.handleChangeText.bind(this);
-        this.handleChangeCheckBox = this.handleChangeCheckBox.bind(this);
+        this.handleChange = this.handleChange.bind(this);
 
         this.state = {
-            checked: false,
+            numero: 0,
+            check: false,
+            select: 'one',
             text: '',
         }
     }
 
-    handleChangeText(event) {
-        this.setState({
-            text: event.target.value,
-        })
-    }
-
-    handleChangeCheckBox() {
-        const value = (this.state.checked) ? false : true;
-        this.setState({
-            checked: value,
-        })
+    handleChange({ target }) {
+        const { name } = target;
+        const value = target.type === 'checkbox' ? target.checked : target.value;
+        this.setState({ [name]: value })
     }
 
     render() {
         return (
             <form>
-                <select>
-                    <option value='one'>Opção 1</option>
-                    <option value='two'>Opção 2</option>
-                </select>
-                <input type='number' name="numero" />
-                <input type='checkbox' name="check" value={this.state.checked} onChange={this.handleChangeCheckBox} />
-                <textarea name="textarea" value={this.state.text} onChange={this.handleChangeText} />
+                <fieldset>
+                    <select name="select" value={this.state.select} onChange={this.handleChange}>
+                        <option value='one'>Opção 1</option>
+                        <option value='two'>Opção 2</option>
+                    </select>
+                    <input type="file" />
+                </fieldset>
+                <fieldset>
+                    <input type='number' name="numero" value={this.state.numero} onChange={this.handleChange} />
+                    <input type='checkbox' name="check" value={this.state.check} onChange={this.handleChange} />
+                    <textarea name="text" value={this.state.text} onChange={this.handleChange} />
+                </fieldset>
             </form>
         );
     }
