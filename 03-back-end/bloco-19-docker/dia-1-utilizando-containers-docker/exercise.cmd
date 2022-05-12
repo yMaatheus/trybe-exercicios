@@ -17,3 +17,7 @@ exit
 ## Verificando na lista de containers qual se refere ao que foi criado:
 
 docker container ls -la
+
+## Inicinado container novamente sem precisar criar outro:
+
+docker container start 3ea9b3406762
