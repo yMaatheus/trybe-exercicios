@@ -37,3 +37,7 @@ cat /etc/debian_version
 ## Saindo do terminal do container:
 
 exit
+
+## Removendo somente o container criado no exercicio:
+
+docker container rm -f 3ea9b3406762
