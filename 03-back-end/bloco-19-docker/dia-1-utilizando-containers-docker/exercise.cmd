@@ -13,3 +13,7 @@ cat /etc/*-release
 ## Encerrando o terminal do container:
 
 exit
+
+## Verificando na lista de containers qual se refere ao que foi criado:
+
+docker container ls -la
