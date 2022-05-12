@@ -21,3 +21,7 @@ docker container ls -la
 ## Inicinado container novamente sem precisar criar outro:
 
 docker container start 3ea9b3406762
+
+## Validando se ele está ativo na lista de containers:
+
+docker container ls
