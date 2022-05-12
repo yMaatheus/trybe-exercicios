@@ -41,3 +41,9 @@ exit
 ## Removendo somente o container criado no exercicio:
 
 docker container rm -f 3ea9b3406762
+
+## (Bonus) Rodando um container com a imagem "andrius/ascii-patrol" no modo cleanup:
+
+docker run -it --rm andrius/ascii-patrol
+
+## Saindo do terminal do container utilizando [ctrl] + [c]
