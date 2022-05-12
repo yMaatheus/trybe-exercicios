@@ -25,3 +25,15 @@ docker container start 3ea9b3406762
 ## Validando se ele está ativo na lista de containers:
 
 docker container ls
+
+## Remotando ao terminal do container criado no exercicio:
+
+docker container attach 3ea9b3406762
+
+## Rodando comando para ver versão atual do Debian:
+
+cat /etc/debian_version
+
+## Saindo do terminal do container:
+
+exit
