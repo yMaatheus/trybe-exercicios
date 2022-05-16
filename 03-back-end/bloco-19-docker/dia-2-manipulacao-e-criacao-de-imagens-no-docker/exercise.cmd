@@ -9,3 +9,7 @@ docker container run cowsay
 # Criando um container com comando personalizado:
 
 docker container run cowsay hello
+
+# Obtendo a lista de animais:
+
+docker container run cowsay -l
