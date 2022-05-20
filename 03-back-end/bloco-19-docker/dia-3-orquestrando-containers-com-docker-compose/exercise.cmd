@@ -9,3 +9,7 @@ docker ps
 ## Obtendo o caminho do container na "Mounts" na chave "Source":
 
 docker inspect 80db1dde6def
+
+## Parando o  container:
+
+docker stop 80db1dde6def
