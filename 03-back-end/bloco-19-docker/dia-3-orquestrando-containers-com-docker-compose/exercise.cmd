@@ -26,3 +26,7 @@ ls -la
 ## Obtando o id da imagem:
 
 docker images
+
+## Excluindo imagem:
+
+docker rmi c58ef9bfbb57
