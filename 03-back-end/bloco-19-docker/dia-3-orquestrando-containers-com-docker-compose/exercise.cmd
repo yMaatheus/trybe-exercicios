@@ -5,3 +5,7 @@ docker container run -d -p 4545:80 -v "/home/matheus/workspace/exercises/trybe-e
 ## Obtendo o id do container:
 
 docker ps
+
+## Obtendo o caminho do container na "Mounts" na chave "Source":
+
+docker inspect 80db1dde6def
