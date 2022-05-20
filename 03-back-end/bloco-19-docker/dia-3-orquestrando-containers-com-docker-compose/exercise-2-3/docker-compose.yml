@@ -5,14 +5,16 @@ services:
     ports:
     - 2368:2368
     environment:
-      database__client: mysql
+      database__client: "mysql"
       database__connection__database: ghost
       database__connection__host: mysql
       database__connection__user: root
       database__connection__password: ${MYSQL_ROOT_PASSWORD}
     depends_on:
-      - mysql
+      - "mysql"
   mysql:
     image: mysql:5.7
+    ports:
+    - 3306:3306
     environment:
       MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
