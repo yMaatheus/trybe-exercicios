@@ -12,6 +12,8 @@ services:
       database__connection__password: ${MYSQL_ROOT_PASSWORD}
     depends_on:
       - "mysql"
+    networks:
+      - my-network
   mysql:
     image: mysql:5.7
     ports:
@@ -20,5 +22,10 @@ services:
       MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
     volumes:
       - db-data:/var/lib/mysql
+    networks:
+      - my-network
 volumes:
   db-data:
+networks:
+  my-network:
+    driver: bridge
