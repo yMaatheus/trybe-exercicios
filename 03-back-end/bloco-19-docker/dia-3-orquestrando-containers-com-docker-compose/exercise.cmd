@@ -13,3 +13,7 @@ docker inspect 80db1dde6def
 ## Parando o  container:
 
 docker stop 80db1dde6def
+
+## Removendo o container:
+
+docker rm 80db1dde6def
