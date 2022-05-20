@@ -22,3 +22,7 @@ docker rm 80db1dde6def
 
 cd /home/matheus/workspace/exercises/trybe-exercicios/03-back-end/bloco-19-docker/dia-3-orquestrando-containers-com-docker-compose
 ls -la
+
+## Obtando o id da imagem:
+
+docker images
