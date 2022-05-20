@@ -17,3 +17,8 @@ docker stop 80db1dde6def
 ## Removendo o container:
 
 docker rm 80db1dde6def
+
+## Verificando se o arquivo html está no mesmo lugar:
+
+cd /home/matheus/workspace/exercises/trybe-exercicios/03-back-end/bloco-19-docker/dia-3-orquestrando-containers-com-docker-compose
+ls -la
