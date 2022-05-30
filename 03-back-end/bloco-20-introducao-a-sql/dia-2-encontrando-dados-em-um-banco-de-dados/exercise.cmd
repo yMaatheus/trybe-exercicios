@@ -25,3 +25,7 @@ SELECT Name AS `Nome do Projeto`, Hours AS `Tempo de Trabalho` FROM Scientists.P
 ## Exibindo e ordenando os nomes dos cientistas por ordem alfabética:
 
 SELECT Name FROM Scientists.Scientists ORDER BY Name;
+
+## Exibindo o nome dos projetos em ordem alfabética descendente:
+
+SELECT Name FROM Scientists.Projects ORDER BY Name DESC;
