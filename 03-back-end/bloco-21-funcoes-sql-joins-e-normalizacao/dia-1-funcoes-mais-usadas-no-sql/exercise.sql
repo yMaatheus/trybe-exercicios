@@ -6,3 +6,6 @@ SELECT (MAX(SALARY) - MIN(SALARY)) FROM hr.employees;
 
 -- exibindo a média salarial de cada JOB_ID, ordenando pela média salarial em ordem decrescente:
 SELECT JOB_ID, AVG(SALARY) AS avg_job FROM hr.employees GROUP BY JOB_ID ORDER BY avg_job DESC
+
+-- exibindo a quantidade de dinheiro necessária para realizar o pagamento de todas as pessoas funcionárias:
+SELECT SUM(SALARY) FROM hr.employees;
