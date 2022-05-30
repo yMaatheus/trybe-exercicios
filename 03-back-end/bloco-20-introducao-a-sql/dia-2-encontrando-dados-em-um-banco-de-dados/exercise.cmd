@@ -9,3 +9,7 @@ SELECT 1, 2, 3;
 ## Escrevendo QUERY que soma os numeros 10 e 15:
 
 SELECT 10 + 15;
+
+## Escrevendo QUERY com operação aritmética :
+
+SELECT (10 + (4 * 5)) / 2;
