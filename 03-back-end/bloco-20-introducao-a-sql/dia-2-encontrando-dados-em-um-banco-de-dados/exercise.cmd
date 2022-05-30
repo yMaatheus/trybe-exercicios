@@ -37,3 +37,7 @@ SELECT CONCAT('O projeto ', Name, ' precisou de ', Hours, ' horas para ser concl
 ## Exibindo o nome e as horas dos três projetos com a maior quantidade de horas.
 
 SELECT Name, Hours FROM Scientists.Projects ORDER BY Hours DESC LIMIT 3;
+
+## Exibindo o código de todos os projetos da tabela AssignedTo sem que haja repetições.
+
+SELECT DISTINCT Project FROM Scientists.AssignedTo;
