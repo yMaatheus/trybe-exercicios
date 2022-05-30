@@ -9,3 +9,6 @@ INSERT INTO Pixar.BoxOffice (movie_id, rating, domestic_sales, international_sal
 -- corrigindo o nome do diretor do filme Procurando Nemo para Andrew Staton:
 SET SQL_SAFE_UPDATES = 0;
 UPDATE Pixar.Movies SET director = 'Andrew Staton' WHERE title = 'Procurando Nemo';
+
+-- corrigindo o titulo e ano de lançamento do filme Ratatouille na tabela Movies:
+UPDATE Pixar.Movies SET title = 'Ratatouille', year = 2007 WHERE id = 3;
