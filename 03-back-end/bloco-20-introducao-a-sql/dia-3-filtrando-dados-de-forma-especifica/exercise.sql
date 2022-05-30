@@ -20,3 +20,7 @@ SELECT COUNT(*) FROM PecasFornecedores.Fornecedores WHERE code LIKE '%F%';
 -- exibindo os fornecimentos onde as peças custam mais de R$15,00 e menos de $40,00 por ordem crescente:
 
 SELECT * FROM PecasFornecedores.Fornecimentos WHERE Preco BETWEEN 15 AND 40 ORDER BY Preco;
+
+-- exibindo o número de vendas feitas entre o dia 15/04/2018 e o dia 30/07/2019:
+
+SELECT COUNT(*) AS vendas_feitas FROM PecasFornecedores.Vendas WHERE DATE(order_date) BETWEEN '2018-04-15' AND '2019-07-30';
