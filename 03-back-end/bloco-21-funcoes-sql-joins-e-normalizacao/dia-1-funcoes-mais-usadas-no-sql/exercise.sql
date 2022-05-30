@@ -15,3 +15,6 @@ SELECT MAX(SALARY), MIN(SALARY), SUM(SALARY), ROUND(AVG(SALARY), 2) FROM hr.empl
 
 -- exibindo a quantidade de pessoas que trabalham como pessoas programadoras (IT_PROG):
 SELECT COUNT(JOB_ID) FROM hr.employees WHERE JOB_ID = 'IT_PROG';
+
+-- exibindo a quantidade de dinheiro necessária para efetuar o pagamento de cada profissão (JOB_ID):
+SELECT JOB_ID, SUM(SALARY) FROM hr.employees GROUP BY JOB_ID;
