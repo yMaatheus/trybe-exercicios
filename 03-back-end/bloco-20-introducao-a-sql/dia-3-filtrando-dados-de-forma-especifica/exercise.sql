@@ -8,3 +8,7 @@ SELECT * FROM PecasFornecedores.Fornecimentos WHERE code = 2 ORDER BY Fornecedor
 -- exibindo as peças, preço e fornecedor de todos os fornecimentos em que a sigla do fornecedor tenha a letra N:
 
 SELECT peca, Preco, Fornecedor FROM PecasFornecedores.Fornecimentos WHERE Fornecedor LIKE '%N%';
+
+-- exibindo todas as informações dos fornecedores que são empresas limitadas (LTDA) por ordem alfabética decrescente:
+
+SELECT * FROM PecasFornecedores.Fornecedores WHERE name LIKE '%LTDA%' ORDER BY name DESC;
