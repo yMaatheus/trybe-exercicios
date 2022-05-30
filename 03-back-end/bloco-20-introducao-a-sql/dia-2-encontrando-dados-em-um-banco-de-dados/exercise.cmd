@@ -13,3 +13,7 @@ SELECT 10 + 15;
 ## Escrevendo QUERY com operação aritmética :
 
 SELECT (10 + (4 * 5)) / 2;
+
+## Exibindo todas as informações dos ciêntistas:
+
+SELECT * FROM Scientists.Scientists;
