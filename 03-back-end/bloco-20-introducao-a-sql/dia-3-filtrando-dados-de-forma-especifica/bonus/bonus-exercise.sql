@@ -9,3 +9,6 @@ SELECT Code, Name FROM Scientists.Projects WHERE Code LIKE '%3%' ORDER BY Name;
 
 -- exibindo todos os ids de cientistas cujos projetos sejam AeH3, Ast3 ou Che1:
 SELECT Scientist FROM Scientists.AssignedTo WHERE Project IN ('AeH3', 'Ast3','Che1');
+
+-- exibindo todas as informações de todos os projetos com mais de 500 horas:
+SELECT * FROM Scientists.Projects WHERE Hours > 500;
