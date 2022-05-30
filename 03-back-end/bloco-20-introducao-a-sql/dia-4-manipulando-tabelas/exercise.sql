@@ -20,6 +20,9 @@ UPDATE Pixar.Movies SET title = 'Ratatouille', year = 2007 WHERE id = 3;
 INSERT INTO Pixar.BoxOffice (movie_id, rating, domestic_sales, international_sales) VALUES 
 (8, 8.5, 300000000, 250000000), (10, 7.4, 460000000, 510000000), (11, 9.9, 290000000, 280000000);
 
--- Exclua da tabela Movies o filme "WALL-E":
+-- exclua da tabela Movies o filme WALL-E:
 SET FOREIGN_KEY_CHECKS=0;
 DELETE FROM Pixar.Movies WHERE title = 'WALL-E';
+
+-- exclua da tabela Movies todos os filmes dirigidos por Andrew Staton:
+DELETE FROM Pixar.Movies WHERE director = 'Andrew Staton';
