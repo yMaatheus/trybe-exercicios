@@ -41,3 +41,7 @@ SELECT Name, Hours FROM Scientists.Projects ORDER BY Hours DESC LIMIT 3;
 ## Exibindo o código de todos os projetos da tabela AssignedTo sem que haja repetições:
 
 SELECT DISTINCT Project FROM Scientists.AssignedTo;
+
+## Exibindo o nome do projeto com maior quantidade de horas:
+
+SELECT Name FROM Scientists.Projects ORDER BY Hours DESC LIMIT 1;
