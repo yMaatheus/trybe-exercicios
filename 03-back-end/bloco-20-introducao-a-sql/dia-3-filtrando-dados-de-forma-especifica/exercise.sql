@@ -16,3 +16,7 @@ SELECT * FROM PecasFornecedores.Fornecedores WHERE name LIKE '%LTDA%' ORDER BY n
 -- exibindo o número de empresas (fornecedores) que contém a letra F na sigla:
 
 SELECT COUNT(*) FROM PecasFornecedores.Fornecedores WHERE code LIKE '%F%';
+
+-- exibindo os fornecimentos onde as peças custam mais de R$15,00 e menos de $40,00 por ordem crescente:
+
+SELECT * FROM PecasFornecedores.Fornecimentos WHERE Preco BETWEEN 15 AND 40 ORDER BY Preco;
