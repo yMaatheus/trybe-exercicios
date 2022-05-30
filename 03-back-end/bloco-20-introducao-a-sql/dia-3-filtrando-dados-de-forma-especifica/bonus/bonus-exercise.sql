@@ -18,3 +18,6 @@ SELECT * FROM Scientists.Projects WHERE Hours BETWEEN 250 AND 800;
 
 -- exibindo o nome e o código de todos os projetos cujo nome NÃO inicie com a letra A:
 SELECT Code, Name FROM Scientists.Projects WHERE Name NOT LIKE 'A%';
+
+-- exibindo o nome de todos os projetos cujo código contenha a letra H:
+SELECT Name FROM Scientists.Projects WHERE Code LIKE '%H%';
