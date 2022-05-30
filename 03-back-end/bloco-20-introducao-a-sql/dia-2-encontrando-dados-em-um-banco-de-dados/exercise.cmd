@@ -53,3 +53,7 @@ SELECT Name FROM Scientists.Projects ORDER BY Hours LIMIT 1 OFFSET 1;
 ## Exibindo todas as informações dos cinco projetos com a menor quantidade de horas:
 
 SELECT * FROM Scientists.Projects ORDER BY Hours LIMIT 5;
+
+## Exibindo a string "Existem Number cientistas na tabela Scientists.", em que Number se refira a quantidade de cientistas:
+
+SELECT CONCAT('Existem ', COUNT(Name), ' cientistas na tabela Scientists.') as scientists_quantity FROM Scientists.Scientists;
