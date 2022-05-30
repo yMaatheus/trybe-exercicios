@@ -12,3 +12,7 @@ SELECT peca, Preco, Fornecedor FROM PecasFornecedores.Fornecimentos WHERE Fornec
 -- exibindo todas as informações dos fornecedores que são empresas limitadas (LTDA) por ordem alfabética decrescente:
 
 SELECT * FROM PecasFornecedores.Fornecedores WHERE name LIKE '%LTDA%' ORDER BY name DESC;
+
+-- exibindo o número de empresas (fornecedores) que contém a letra F na sigla:
+
+SELECT COUNT(*) FROM PecasFornecedores.Fornecedores WHERE code LIKE '%F%';
