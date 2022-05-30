@@ -10,5 +10,8 @@ SELECT JOB_ID, AVG(SALARY) AS avg_job FROM hr.employees GROUP BY JOB_ID ORDER BY
 -- exibindo a quantidade de dinheiro necessária para realizar o pagamento de todas as pessoas funcionárias:
 SELECT SUM(SALARY) FROM hr.employees;
 
--- exibindo o maior salário, o menor salário, a soma de todos os salários e a média dos salários, valores formatados com duas casas decimais.
+-- exibindo o maior salário, o menor salário, a soma de todos os salários e a média dos salários, valores formatados com duas casas decimais:
 SELECT MAX(SALARY), MIN(SALARY), SUM(SALARY), ROUND(AVG(SALARY), 2) FROM hr.employees;
+
+-- exibindo a quantidade de pessoas que trabalham como pessoas programadoras (IT_PROG):
+SELECT COUNT(JOB_ID) FROM hr.employees WHERE JOB_ID = 'IT_PROG';
