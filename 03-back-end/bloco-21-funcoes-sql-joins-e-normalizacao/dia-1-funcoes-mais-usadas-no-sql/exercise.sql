@@ -34,3 +34,6 @@ UPDATE hr.employees SET PHONE_NUMBER = REPLACE(PHONE_NUMBER, 515, '777') WHERE P
 
 -- exibindo as informações dos funcionários cujo o primeiro nome tenha oito ou mais caracteres:
 SELECT * FROM hr.employees WHERE CHAR_LENGTH(FIRST_NAME) >= 8;
+
+-- exibindo as seguintes informações de cada funcionário: id, primeiro nome e ano no qual foi contratado (somente o ano):
+SELECT EMPLOYEE_ID, FIRST_NAME, YEAR(HIRE_DATE) FROM hr.employees;
