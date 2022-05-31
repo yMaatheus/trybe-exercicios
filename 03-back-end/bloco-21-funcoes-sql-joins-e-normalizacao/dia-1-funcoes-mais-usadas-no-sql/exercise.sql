@@ -43,3 +43,6 @@ SELECT EMPLOYEE_ID, FIRST_NAME, DAY(HIRE_DATE) FROM hr.employees;
 
 -- exibindo id, primeiro nome e mês no qual o funcionário foi contratado (somente o mês):
 SELECT EMPLOYEE_ID, FIRST_NAME, MONTH(HIRE_DATE) FROM hr.employees;
+
+-- exibindo os nomes dos funcionários em letra maiúscula:
+SELECT UCASE(CONCAT(FIRST_NAME, ' ', LAST_NAME)) AS full_name FROM hr.employees;
