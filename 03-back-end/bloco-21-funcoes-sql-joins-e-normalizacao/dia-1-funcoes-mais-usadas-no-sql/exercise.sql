@@ -27,3 +27,7 @@ SELECT JOB_ID, AVG(SALARY) AS avg_salary FROM hr.employees GROUP BY JOB_ID HAVIN
 
 -- exibindo média salarial e o número de funcionários de todos os departamentos com mais de dez funcionários:
 SELECT DEPARTMENT_ID, COUNT(DEPARTMENT_ID) AS quantity_employees, AVG(SALARY) AS avg_salary FROM hr.employees GROUP BY DEPARTMENT_ID HAVING quantity_employees > 10;
+
+-- atualizando a coluna PHONE_NUMBER, de modo que todos os telefones iniciados por 515 agora devem iniciar com 777:
+SET SQL_SAFE_UPDATES = 0;
+UPDATE hr.employees SET PHONE_NUMBER = REPLACE(PHONE_NUMBER, 515, '777') WHERE PHONE_NUMBER LIKE '515%';
