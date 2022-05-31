@@ -31,3 +31,6 @@ SELECT DEPARTMENT_ID, COUNT(DEPARTMENT_ID) AS quantity_employees, AVG(SALARY) AS
 -- atualizando a coluna PHONE_NUMBER, de modo que todos os telefones iniciados por 515 agora devem iniciar com 777:
 SET SQL_SAFE_UPDATES = 0;
 UPDATE hr.employees SET PHONE_NUMBER = REPLACE(PHONE_NUMBER, 515, '777') WHERE PHONE_NUMBER LIKE '515%';
+
+-- exibindo as informações dos funcionários cujo o primeiro nome tenha oito ou mais caracteres:
+SELECT * FROM hr.employees WHERE CHAR_LENGTH(FIRST_NAME) >= 8;
