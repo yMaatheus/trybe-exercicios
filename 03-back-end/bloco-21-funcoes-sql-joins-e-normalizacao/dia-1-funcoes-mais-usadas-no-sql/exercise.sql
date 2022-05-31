@@ -21,3 +21,6 @@ SELECT JOB_ID, SUM(SALARY) FROM hr.employees GROUP BY JOB_ID;
 
 -- exibindo a quantidade de dinheiro necessária para cobrir a folha de pagamento das pessoas programadoras (IT_PROG):
 SELECT JOB_ID, SUM(SALARY) FROM hr.employees WHERE JOB_ID = 'IT_PROG';
+
+-- exibindo em ordem decrescente a média salarial de todos os cargos, exceto das pessoas programadoras (IT_PROG):
+SELECT JOB_ID, AVG(SALARY) AS avg_salary FROM hr.employees GROUP BY JOB_ID HAVING JOB_ID <> 'IT_PROG' ORDER BY avg_salary DESC;
