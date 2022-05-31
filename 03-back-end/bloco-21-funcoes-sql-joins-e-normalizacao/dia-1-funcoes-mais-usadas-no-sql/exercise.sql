@@ -49,3 +49,6 @@ SELECT UCASE(CONCAT(FIRST_NAME, ' ', LAST_NAME)) AS full_name FROM hr.employees;
 
 -- exibindo o sobrenome e a data de contratação de todos os funcionário contratados em julho de 1987:
 SELECT LAST_NAME, HIRE_DATE FROM hr.employees WHERE HIRE_DATE LIKE '1987-07%';
+
+-- exibindo nome, sobrenome, tempo que trabalha na empresa (em dias) de cada funcionário:
+SELECT FIRST_NAME, LAST_NAME, DATEDIFF(CURRENT_DATE(), HIRE_DATE) AS DAYS FROM hr.employees;
