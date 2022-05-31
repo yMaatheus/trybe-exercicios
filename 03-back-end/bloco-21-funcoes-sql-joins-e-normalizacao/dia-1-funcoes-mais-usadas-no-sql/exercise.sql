@@ -46,3 +46,6 @@ SELECT EMPLOYEE_ID, FIRST_NAME, MONTH(HIRE_DATE) FROM hr.employees;
 
 -- exibindo os nomes dos funcionários em letra maiúscula:
 SELECT UCASE(CONCAT(FIRST_NAME, ' ', LAST_NAME)) AS full_name FROM hr.employees;
+
+-- exibindo o sobrenome e a data de contratação de todos os funcionário contratados em julho de 1987:
+SELECT LAST_NAME, HIRE_DATE FROM hr.employees WHERE HIRE_DATE LIKE '1987-07%';
