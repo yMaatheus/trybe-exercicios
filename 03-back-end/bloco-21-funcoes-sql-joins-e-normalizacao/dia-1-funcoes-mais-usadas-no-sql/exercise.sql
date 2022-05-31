@@ -18,3 +18,6 @@ SELECT COUNT(JOB_ID) FROM hr.employees WHERE JOB_ID = 'IT_PROG';
 
 -- exibindo a quantidade de dinheiro necessária para efetuar o pagamento de cada profissão (JOB_ID):
 SELECT JOB_ID, SUM(SALARY) FROM hr.employees GROUP BY JOB_ID;
+
+-- exibindo a quantidade de dinheiro necessária para cobrir a folha de pagamento das pessoas programadoras (IT_PROG):
+SELECT JOB_ID, SUM(SALARY) FROM hr.employees WHERE JOB_ID = 'IT_PROG';
