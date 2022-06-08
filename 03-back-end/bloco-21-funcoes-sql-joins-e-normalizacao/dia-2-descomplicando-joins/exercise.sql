@@ -6,3 +6,14 @@ SELECT
 FROM
     pixar.movies AS movies
     INNER JOIN pixar.box_office AS box ON movies.id = box.movie_id;
+
+-- obtendo filmes com o numero de vendas internacionais maior que nacionais.
+
+SELECT
+    movies.title,
+    box.domestic_sales,
+    box.international_sales
+FROM
+    pixar.movies AS movies
+    INNER JOIN pixar.box_office AS box ON movies.id = box.movie_id
+    AND box.international_sales > box.domestic_sales;
