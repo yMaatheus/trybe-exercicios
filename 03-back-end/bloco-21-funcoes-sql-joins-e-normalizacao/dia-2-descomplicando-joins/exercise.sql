@@ -26,3 +26,15 @@ FROM
     INNER JOIN pixar.box_office AS box ON movies.id = box.movie_id
 ORDER BY
     box.rating DESC;
+
+-- retornando todos os dados dos cinemas, mesmo os que não possuem filmes em cartaz e os dados dos filmes que estão em cartaz nestes cinemas.
+SELECT
+    theater.id,
+    theater.name,
+    theater.location,
+    movies.title
+FROM
+    pixar.theater AS theater
+    LEFT JOIN pixar.movies AS movies ON theater.id = movies.theater_id
+ORDER BY
+    theater.name;
