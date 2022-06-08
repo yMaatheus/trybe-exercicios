@@ -50,3 +50,12 @@ FROM
     RIGHT JOIN pixar.movies AS movies ON theater.id = movies.theater_id
 ORDER BY
     theater.name;
+
+-- selecione todas as informações dos filmes que estão em cartaz com avaliação maior que 8.
+SELECT
+    *
+FROM
+    pixar.movies AS movies
+    INNER JOIN pixar.box_office AS box ON movies.id = box.movie_id
+    AND movies.theater_id IS NOT NULL
+    AND box.rating > 8;
