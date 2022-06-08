@@ -38,3 +38,15 @@ FROM
     LEFT JOIN pixar.movies AS movies ON theater.id = movies.theater_id
 ORDER BY
     theater.name;
+
+-- retornando todos os dados dos filmes, mesmo os que não estão em cartaz e os dados dos cinemas que possuem estes filmes em cartaz.
+SELECT
+    theater.id,
+    theater.name,
+    theater.location,
+    movies.title
+FROM
+    pixar.theater AS theater
+    RIGHT JOIN pixar.movies AS movies ON theater.id = movies.theater_id
+ORDER BY
+    theater.name;
