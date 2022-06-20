@@ -11,6 +11,13 @@ const sumAndMultiply = (a, b, c) => {
 
 const getRandomNumber = () => Math.floor(Math.random() * 100 + 1);
 
-sumAndMultiply(getRandomNumber(), getRandomNumber(), getRandomNumber())
-    .then(result => console.log(result))
-    .catch(err => console.log(err.message));
+const callSumAndMultiply = async () => {
+    try {
+        const result = await sumAndMultiply(getRandomNumber(), getRandomNumber(), getRandomNumber());
+        console.log(result);
+    } catch(err) {
+        console.log(err.message)
+    }
+}
+
+callSumAndMultiply();
