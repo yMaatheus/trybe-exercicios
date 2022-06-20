@@ -8,3 +8,9 @@ const sumAndMultiply = (a, b, c) => {
         resolve(sum);
     });
 }
+
+const getRandomNumber = () => Math.floor(Math.random() * 100 + 1);
+
+sumAndMultiply(getRandomNumber(), getRandomNumber(), getRandomNumber())
+    .then(result => console.log(result))
+    .catch(err => console.log(err.message));
