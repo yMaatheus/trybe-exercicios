@@ -11,12 +11,8 @@ const writeFile = async (file, contents) => {
 }
 
 const readSimpsons = async () => {
-  try {
-    const array = await readFile('./simpsons.json');
-    array.forEach(({ id, name }) => console.log(`${id} - ${name}`));
-  } catch (error) {
-    console.log(error);
-  }
+  const array = await readFile('./simpsons.json');
+  array.forEach(({ id, name }) => console.log(`${id} - ${name}`));
 }
 
 const getSimpsonById = async (id) => {
@@ -32,14 +28,10 @@ const getSimpsonById = async (id) => {
 }
 
 const deleteSimpsonById = async (...ids) => {
-  try {
-    const array = await readFile('./simpsons.json');
-    const simpsons = array.filter(({ id }) => !ids.includes(id));
-    await writeFile('./simpsons.json', JSON.stringify(simpsons));
-    return simpsons;
-  } catch (error) {
-    console.error(error);
-  }
+  const array = await readFile('./simpsons.json');
+  const simpsons = array.filter(({ id }) => !ids.includes(id));
+  await writeFile('./simpsons.json', JSON.stringify(simpsons));
+  return simpsons;
 }
 
 // readSimpsons();
@@ -49,4 +41,4 @@ const deleteSimpsonById = async (...ids) => {
 // getSimpsonById(11).then((simpson) => console.log(simpson)).catch((err) => console.log(err.message));
 
 
-// deleteSimpsonById('6', '10');
+// deleteSimpsonById('6', '10').then((simpson) => console.log(simpson)).catch((err) => console.log(err.message));
