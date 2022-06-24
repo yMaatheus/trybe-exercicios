@@ -41,6 +41,14 @@ const simpsonFamily = async () => {
   return simpsonsFamily;
 }
 
+const addSimpsonFamily = async (name) => {
+  const array = await readFile('./simpsonFamily.json');
+  const newId = `${array.reduce((acc, { id }) => acc < +id && +id, 0) + 1}`;
+  const newArray = [...array, { id: newId, name }]
+  await writeFile('./simpsonFamily.json', JSON.stringify(newArray));
+  return newArray;
+}
+
 // readSimpsons();
 
 // getSimpsonById(1).then((simpson) => console.log(simpson)).catch((err) => console.log(err.message));
@@ -49,4 +57,6 @@ const simpsonFamily = async () => {
 
 // deleteSimpsonById('6', '10').then((simpsons) => console.log(simpsons)).catch((err) => console.log(err.message));
 
-simpsonFamily().then((simpsonsFamily) => console.log(simpsonsFamily)).catch((err) => console.log(err.message));
+// simpsonFamily().then((simpsonsFamily) => console.log(simpsonsFamily)).catch((err) => console.log(err.message));
+
+addSimpsonFamily('Nelson Muntz').then((simpsonFamily) => console.log(simpsonFamily)).catch((err) => console.log(err.message));
