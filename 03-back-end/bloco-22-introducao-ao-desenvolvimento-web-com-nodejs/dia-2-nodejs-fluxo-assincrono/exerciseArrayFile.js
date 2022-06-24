@@ -16,4 +16,17 @@ const createFiles = () => {
     });
 }
 
-createFiles();
+// createFiles();
+
+const readFiles = async () => {
+    const length = array.length + 1;
+    const words = [];
+    for (let i = 1; i < length; i++) {
+        const content = await readFile(`./file${i}.txt`);
+        words.push(content);
+    }
+    const phrase = words.join(' ')
+    await writeFile('./fileAll.txt', phrase);
+}
+
+readFiles();
