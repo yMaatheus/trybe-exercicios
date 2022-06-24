@@ -34,11 +34,19 @@ const deleteSimpsonById = async (...ids) => {
   return simpsons;
 }
 
+const simpsonFamily = async () => {
+  const array = await readFile('./simpsons.json');
+  const simpsonsFamily = array.filter(({ id }) => id < 4);
+  await writeFile('./simpsonFamily.json', JSON.stringify(simpsonsFamily));
+  return simpsonsFamily;
+}
+
 // readSimpsons();
 
 // getSimpsonById(1).then((simpson) => console.log(simpson)).catch((err) => console.log(err.message));
 
 // getSimpsonById(11).then((simpson) => console.log(simpson)).catch((err) => console.log(err.message));
 
+// deleteSimpsonById('6', '10').then((simpsons) => console.log(simpsons)).catch((err) => console.log(err.message));
 
-// deleteSimpsonById('6', '10').then((simpson) => console.log(simpson)).catch((err) => console.log(err.message));
+simpsonFamily().then((simpsonsFamily) => console.log(simpsonsFamily)).catch((err) => console.log(err.message));
