@@ -19,7 +19,7 @@ app.put('/users/:name/:age', (req, res) => {
     res.status(200).json({ "message": `Seu nome é ${name} e você tem ${age} anos de idade` });
 });
 
-app.get('/simpsons', async (req, res) => {
+app.get('/simpsons', async (_req, res) => {
     try {
         const simpsons = await readFile('./simpsons.json');
         res.status(200).json(simpsons);
