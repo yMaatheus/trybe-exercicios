@@ -28,4 +28,18 @@ app.get('/simpsons', async (_req, res) => {
     }
 });
 
+app.get('/simpsons/:id', async (req, res) => {
+    try {
+        const { id } = req.params;
+        const simpsons = await readFile('./simpsons.json');
+        const simpson = simpsons.find(({ id: simpsonId }) => simpsonId === id);
+        if (!simpson) {
+            res.status(404).json({ message: 'simpson not found' });
+        }
+        res.status(200).json(simpson);
+    } catch (error) {
+        res.status(500).json({ "error": error.message });
+    }
+});
+
 app.listen(3001, () => console.log('listening on port 3001'));
