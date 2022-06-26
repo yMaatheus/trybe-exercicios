@@ -1,16 +1,20 @@
 const express = require('express');
 const cors = require('cors');
 
-const validateSale = require('./middlewares/salesMiddleware');
-const validateSignup = require('./ middlewares/signupMiddleware');
+const writeFile = require('./helpers/writeFile');
 const generateToken = require('./helpers/token');
+
+const validateSale = require('./middlewares/salesMiddleware');
+const validateSignup = require('./middlewares/signupMiddleware');
+const validateToken = require('./middlewares/tokenMiddleware');
+
 
 const app = express();
 
 app.use(express.json());
 app.use(cors());
 
-app.post('/sales', validateSale, async (_req, res) =>
+app.post('/sales', validateSale, validateToken, async (_req, res) =>
     res.status(201).json({ "message": "Venda cadastrada com sucesso" }));
 
 app.post('/signup', validateSignup, async (_req, res) => {
