@@ -5,7 +5,8 @@ const whatIsThisNumber = (number) => {
         return 'negativo';
     } else if (number === 0) {
         return 'neutro';
-    }
+    } 
+    throw new Error('Invalid number');
 }
 
 module.exports = whatIsThisNumber;
