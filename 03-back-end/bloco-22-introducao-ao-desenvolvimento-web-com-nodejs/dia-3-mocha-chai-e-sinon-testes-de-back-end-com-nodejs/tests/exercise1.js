@@ -11,4 +11,7 @@ describe('Executando função whatIsThisNumber', () => {
     it('Quando o numero é zero retorna neutro', () => {
         expect(whatIsThisNumber(0)).to.be.equal('neutro');
     });
+    it('Quando não é um número retorna um erro', () => {
+        expect(() => whatIsThisNumber('hello world')).to.throw('Invalid number');
+    });
 });
